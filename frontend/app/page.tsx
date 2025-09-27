@@ -1,16 +1,22 @@
 "use client"
 
 import { useRef, useState } from "react"
+import { useSession } from "next-auth/react"
 import { motion, useScroll, useTransform } from "framer-motion"
+import { LogIn } from "lucide-react"
 import { FloatingNavbar } from "@/components/floating-navbar"
 import { PredictionTabs } from "@/components/prediction-tabs"
 import { ContactSection } from "@/components/contact-section"
+import { UserMenu } from "@/components/user-menu"
+import { Button } from "@/components/ui/button"
 import { useLenis } from "@/hooks/use-lenis"
+import Link from "next/link"
 
 export default function HomePage() {
   const containerRef = useRef<HTMLDivElement>(null)
   const startBtnRef = useRef<HTMLButtonElement>(null)
   const learnBtnRef = useRef<HTMLButtonElement>(null)
+  const { data: session } = useSession()
   
   const [startBtnGlow, setStartBtnGlow] = useState({ x: 0, y: 0 })
   const [learnBtnGlow, setLearnBtnGlow] = useState({ x: 0, y: 0 })
@@ -47,6 +53,32 @@ export default function HomePage() {
     <div ref={containerRef} className="min-h-screen bg-background relative overflow-hidden">
       {/* Floating Navbar */}
       <FloatingNavbar />
+
+      {/* Top Right Auth Button */}
+      <div className="fixed top-6 right-6 z-40">
+        {session?.user ? (
+          <UserMenu />
+        ) : (
+          <Link href="/auth/signin">
+            <motion.div
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              className="relative group"
+            >
+              <Button
+                size="lg"
+                className="bg-black/20 backdrop-blur-xl border border-white/10 text-white font-medium shadow-2xl hover:bg-black/30 transition-all duration-300 px-6 py-3 rounded-2xl"
+              >
+                <LogIn className="w-5 h-5 mr-2" />
+                Sign In
+              </Button>
+              
+              {/* Glassmorphism glow effect */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-white/5 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl" />
+            </motion.div>
+          </Link>
+        )}
+      </div>
 
         <motion.section
           initial={{ opacity: 0, y: 50 }}
@@ -150,7 +182,6 @@ export default function HomePage() {
                     : "0 0 15px rgba(59, 130, 246, 0.3), 0 0 30px rgba(99, 102, 241, 0.2)"
                 }}
               >
-                {/* Enhanced Glow Effect */}
                 <motion.div
                   className="absolute pointer-events-none"
                   style={{

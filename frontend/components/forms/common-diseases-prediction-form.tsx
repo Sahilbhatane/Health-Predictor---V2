@@ -3,9 +3,11 @@
 import type React from "react"
 
 import { useState } from "react"
+import { useSession } from "next-auth/react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Loader2, Stethoscope, AlertCircle, CheckCircle, Pill, AlertTriangle, Activity, TrendingUp, ChevronDown, ChevronUp, User, UserCheck } from "lucide-react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { AuthGuard } from "@/components/auth-guard"
 
 interface FormData {
   symptoms: string[]
@@ -80,6 +82,7 @@ const symptomCategories = {
 }
 
 export function ImprovedCommonDiseasesPredictionForm() {
+  const { data: session } = useSession()
   const [formData, setFormData] = useState<FormData>({
     symptoms: [],
     duration: "",
@@ -300,67 +303,71 @@ export function ImprovedCommonDiseasesPredictionForm() {
           </TabsContent>
 
           <TabsContent value="recommendations" className="space-y-6 mt-6">
-            <div className="bg-slate-800/30 rounded-xl p-6">
-              <h4 className="font-semibold text-white mb-4 flex items-center">
-                <Stethoscope className="w-5 h-5 text-emerald-400 mr-2" />
-                General Health Recommendations
-              </h4>
-              <ul className="space-y-3">
-                {result.recommendations.map((rec, index) => (
-                  <motion.li
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    className="flex items-start text-slate-300"
-                  >
-                    <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 mr-3 flex-shrink-0" />
-                    <span className="text-sm leading-relaxed">{rec}</span>
-                  </motion.li>
-                ))}
-              </ul>
-              <div className="mt-6 p-4 bg-blue-500/10 border border-blue-500/30 rounded-lg">
-                <p className="text-blue-400 text-sm">
-                  <strong>Note:</strong> {result.risk === "high"
-                    ? "Please consult with a healthcare professional as soon as possible."
-                    : result.risk === "medium"
-                      ? "Consider monitoring your symptoms and consult a doctor if they worsen."
-                      : "Your symptoms appear mild. Rest and basic care should help, but consult a doctor if symptoms persist."}
-                </p>
+            <AuthGuard requiredForTabs={["recommendations"]}>
+              <div className="bg-slate-800/30 rounded-xl p-6">
+                <h4 className="font-semibold text-white mb-4 flex items-center">
+                  <Stethoscope className="w-5 h-5 text-emerald-400 mr-2" />
+                  General Health Recommendations
+                </h4>
+                <ul className="space-y-3">
+                  {result.recommendations.map((rec, index) => (
+                    <motion.li
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      className="flex items-start text-slate-300"
+                    >
+                      <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 mr-3 flex-shrink-0" />
+                      <span className="text-sm leading-relaxed">{rec}</span>
+                    </motion.li>
+                  ))}
+                </ul>
+                <div className="mt-6 p-4 bg-blue-500/10 border border-blue-500/30 rounded-lg">
+                  <p className="text-blue-400 text-sm">
+                    <strong>Note:</strong> {result.risk === "high"
+                      ? "Please consult with a healthcare professional as soon as possible."
+                      : result.risk === "medium"
+                        ? "Consider monitoring your symptoms and consult a doctor if they worsen."
+                        : "Your symptoms appear mild. Rest and basic care should help, but consult a doctor if symptoms persist."}
+                  </p>
+                </div>
               </div>
-            </div>
+            </AuthGuard>
           </TabsContent>
 
           <TabsContent value="medicine" className="space-y-6 mt-6">
-            <div className="bg-slate-800/30 rounded-xl p-6">
-              <h4 className="font-semibold text-white mb-4 flex items-center">
-                <Pill className="w-5 h-5 text-blue-400 mr-2" />
-                Medicine Suggestions and Recommendations
-              </h4>
-              <div className="bg-orange-500/10 border border-orange-500/30 rounded-xl p-6">
-                <div className="flex items-center mb-4">
-                  <AlertTriangle className="w-6 h-6 text-orange-400 mr-3" />
-                  <h5 className="font-semibold text-orange-400 text-lg">Coming Soon</h5>
-                </div>
-                <div className="space-y-4 text-slate-300">
-                  <p className="leading-relaxed">
-                    This section will provide personalized medicine suggestions and pharmaceutical recommendations based on your symptoms and predicted condition.
-                  </p>
-                  <ul className="space-y-2 list-disc list-inside text-sm">
-                    <li>Tailored medication options for your specific condition</li>
-                    <li>Dosage recommendations and timing instructions</li>
-                    <li>Potential side effects and drug interactions</li>
-                    <li>Over-the-counter alternatives and natural remedies</li>
-                    <li>Emergency medication protocols when applicable</li>
-                  </ul>
-                  <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4 mt-4">
-                    <p className="text-blue-400 text-sm font-semibold">
-                      📋 This feature will be implemented in future updates to provide comprehensive pharmaceutical guidance.
+            <AuthGuard requiredForTabs={["medicine"]}>
+              <div className="bg-slate-800/30 rounded-xl p-6">
+                <h4 className="font-semibold text-white mb-4 flex items-center">
+                  <Pill className="w-5 h-5 text-blue-400 mr-2" />
+                  Medicine Suggestions and Recommendations
+                </h4>
+                <div className="bg-orange-500/10 border border-orange-500/30 rounded-xl p-6">
+                  <div className="flex items-center mb-4">
+                    <AlertTriangle className="w-6 h-6 text-orange-400 mr-3" />
+                    <h5 className="font-semibold text-orange-400 text-lg">Coming Soon</h5>
+                  </div>
+                  <div className="space-y-4 text-slate-300">
+                    <p className="leading-relaxed">
+                      This section will provide personalized medicine suggestions and pharmaceutical recommendations based on your symptoms and predicted condition.
                     </p>
+                    <ul className="space-y-2 list-disc list-inside text-sm">
+                      <li>Tailored medication options for your specific condition</li>
+                      <li>Dosage recommendations and timing instructions</li>
+                      <li>Potential side effects and drug interactions</li>
+                      <li>Over-the-counter alternatives and natural remedies</li>
+                      <li>Emergency medication protocols when applicable</li>
+                    </ul>
+                    <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4 mt-4">
+                      <p className="text-blue-400 text-sm font-semibold">
+                        📋 This feature will be implemented in future updates to provide comprehensive pharmaceutical guidance.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </AuthGuard>
           </TabsContent>
 
           <TabsContent value="disclaimer" className="space-y-6 mt-6">

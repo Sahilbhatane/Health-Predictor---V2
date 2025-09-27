@@ -3,9 +3,11 @@
 import type React from "react"
 
 import { useState } from "react"
+import { useSession } from "next-auth/react"
 import { motion } from "framer-motion"
 import { Loader2, Brain, AlertCircle, CheckCircle, TrendingUp, Activity, AlertTriangle, Stethoscope, User, UserCheck } from "lucide-react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { AuthGuard } from "@/components/auth-guard"
 
 interface PatientFormData {
   // Patient-friendly inputs
@@ -55,6 +57,7 @@ interface PredictionResult {
 
 export function ParkinsonsPredictionForm() {
   const [mode, setMode] = useState<"patient" | "doctor">("patient")
+  const { data: session } = useSession()
   const [patientFormData, setPatientFormData] = useState<PatientFormData>({
     tremor: "",
     rigidity: "",
@@ -463,26 +466,67 @@ export function ParkinsonsPredictionForm() {
           </TabsContent>
 
           <TabsContent value="recommendations" className="space-y-6 mt-6">
-            <div className="bg-slate-800/30 rounded-xl p-6">
-              <h4 className="font-semibold text-white mb-4 flex items-center">
-                <Brain className="w-5 h-5 text-purple-400 mr-2" />
-                Neurological Care Recommendations
-              </h4>
-              <ul className="space-y-3">
-                {result.recommendations.map((rec, index) => (
-                  <motion.li
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    className="flex items-start text-slate-300"
-                  >
-                    <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 mr-3 flex-shrink-0" />
-                    <span className="text-sm leading-relaxed">{rec}</span>
-                  </motion.li>
-                ))}
-              </ul>
-            </div>
+            <AuthGuard requiredForTabs={["recommendations"]}>
+              <div className="bg-slate-800/30 rounded-xl p-6">
+                <h4 className="font-semibold text-white mb-4 flex items-center">
+                  <Brain className="w-5 h-5 text-purple-400 mr-2" />
+                  Neurological Care Recommendations
+                </h4>
+                <ul className="space-y-3">
+                  {result.recommendations.map((rec, index) => (
+                    <motion.li
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      className="flex items-start text-slate-300"
+                    >
+                      <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 mr-3 flex-shrink-0" />
+                      <span className="text-sm leading-relaxed">{rec}</span>
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
+              
+              {/* Medicine Suggestions Section - Only for authenticated users */}
+              <div className="bg-purple-500/10 border border-purple-500/30 rounded-xl p-6">
+                <div className="flex items-center mb-4">
+                  <Stethoscope className="w-5 h-5 text-purple-400 mr-2" />
+                  <h4 className="font-semibold text-purple-300 text-lg">
+                    Medicine & Treatment Suggestions
+                  </h4>
+                </div>
+                <div className="space-y-4">
+                  <div className="bg-slate-800/30 rounded-lg p-4">
+                    <h5 className="font-medium text-white mb-2">Parkinson's Management</h5>
+                    <ul className="space-y-2 text-sm text-slate-300">
+                      <li className="flex items-center">
+                        <div className="w-2 h-2 bg-purple-400 rounded-full mr-3" />
+                        Levodopa/Carbidopa - Gold standard for motor symptoms
+                      </li>
+                      <li className="flex items-center">
+                        <div className="w-2 h-2 bg-purple-400 rounded-full mr-3" />
+                        Dopamine Agonists (Pramipexole, Ropinirole)
+                      </li>
+                      <li className="flex items-center">
+                        <div className="w-2 h-2 bg-purple-400 rounded-full mr-3" />
+                        MAO-B Inhibitors (Selegiline, Rasagiline)
+                      </li>
+                      <li className="flex items-center">
+                        <div className="w-2 h-2 bg-purple-400 rounded-full mr-3" />
+                        Coenzyme Q10 (300-1200mg) - Neuroprotective support
+                      </li>
+                    </ul>
+                  </div>
+                  
+                  <div className="bg-amber-500/10 border border-amber-500/30 rounded-lg p-3">
+                    <p className="text-xs text-amber-300 font-medium">
+                      ⚠️ These are general suggestions only. Always consult your neurologist for proper Parkinson's treatment.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </AuthGuard>
           </TabsContent>
 
           <TabsContent value="disclaimer" className="space-y-6 mt-6">

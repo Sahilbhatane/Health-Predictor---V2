@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, Heart, Brain, Droplet, Stethoscope, Mail, ExternalLink, Sun, Moon } from "lucide-react"
+import { Menu, X, Heart, Sun, Moon } from "lucide-react"
 import { useTheme } from "./theme-provider"
 
 export function FloatingNavbar() {
@@ -256,7 +256,6 @@ export function FloatingNavbar() {
 
                 {/* Mobile/Tablet: Show essential items + hamburger */}
                 <div className="lg:hidden flex items-center space-x-1">
-                  {/* Show Predict button on mobile */}
                   <motion.button
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
@@ -270,7 +269,6 @@ export function FloatingNavbar() {
                     <span>Predict</span>
                   </motion.button>
 
-                  {/* Mobile Menu Button */}
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -285,24 +283,24 @@ export function FloatingNavbar() {
                   </motion.button>
                 </div>
 
-                {/* Theme Toggle */}
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                  className={`p-1.5 md:p-2 rounded-full transition-all duration-200 ${
-                    theme === "dark" 
-                      ? "text-slate-300 hover:text-white hover:bg-white/10" 
-                      : "text-slate-600 hover:text-slate-900 hover:bg-black/10"
-                  }`}
-                >
-                  {theme === "dark" ? <Sun className="w-3 h-3 md:w-4 md:h-4" /> : <Moon className="w-3 h-3 md:w-4 md:h-4" />}
-                </motion.button>
+                {/* Auth Section */}
+                <div className="flex items-center space-x-2">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                    className={`p-1.5 md:p-2 rounded-full transition-all duration-200 ${
+                      theme === "dark" 
+                        ? "text-slate-300 hover:text-white hover:bg-white/10" 
+                        : "text-slate-600 hover:text-slate-900 hover:bg-black/10"
+                    }`}
+                  >
+                    {theme === "dark" ? <Sun className="w-3 h-3 md:w-4 md:h-4" /> : <Moon className="w-3 h-3 md:w-4 md:h-4" />}
+                  </motion.button>
+                </div>
               </div>
             </div>
-          </motion.div>
-
-          {/* Mobile Expanded Menu - Appears below unified navbar */}
+          </motion.div>          {/* Mobile Expanded Menu - Appears below unified navbar */}
           <AnimatePresence>
             {isExpanded && (
               <motion.div
