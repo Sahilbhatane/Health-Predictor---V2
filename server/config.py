@@ -16,7 +16,7 @@ class Settings:
     # CORS Settings
     ALLOWED_ORIGINS: List[str] = [
         "http://localhost:3000",
-        "https://your-frontend-domain.com"
+        "https://health-predictor-v2.vercel.app/"
     ]
     
     # Model Paths

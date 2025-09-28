@@ -55,7 +55,7 @@ export default function HomePage() {
       <FloatingNavbar />
 
       {/* Top Right Auth Button */}
-      <div className="fixed top-6 right-6 z-40">
+      <div className="fixed top-4 right-4 z-40 sm:top-6 sm:right-6">
         {session?.user ? (
           <UserMenu />
         ) : (
@@ -67,10 +67,10 @@ export default function HomePage() {
             >
               <Button
                 size="lg"
-                className="bg-black/20 backdrop-blur-xl border border-white/10 text-white font-medium shadow-2xl hover:bg-black/30 transition-all duration-300 px-6 py-3 rounded-2xl"
+                className="bg-black/20 backdrop-blur-xl border border-white/10 text-white font-medium shadow-2xl hover:bg-black/30 transition-all duration-300 px-4 py-2 sm:px-6 sm:py-3 rounded-2xl text-sm sm:text-base"
               >
-                <LogIn className="w-5 h-5 mr-2" />
-                Sign In
+                <LogIn className="w-4 h-4 sm:w-5 sm:h-5 sm:mr-2" />
+                <span className="hidden sm:inline ml-2">Sign In</span>
               </Button>
               
               {/* Glassmorphism glow effect */}

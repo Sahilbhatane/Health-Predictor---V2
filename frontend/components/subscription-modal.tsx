@@ -108,25 +108,25 @@ export function SubscriptionModal({ isOpen, onClose, selectedPlan = 'monthly' }:
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ type: "spring", duration: 0.5 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4"
           >
-            <div className="bg-black/40 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden">
+            <div className="bg-black/40 backdrop-blur-2xl border border-white/10 rounded-2xl sm:rounded-3xl shadow-2xl max-w-4xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-hidden">
               {/* Header */}
-              <div className="flex items-center justify-between p-6 border-b border-white/10">
+              <div className="flex items-center justify-between p-4 sm:p-6 border-b border-white/10">
                 <div>
-                  <h2 className="text-2xl font-bold text-white">Choose Your Plan</h2>
-                  <p className="text-white/60 mt-1">Unlock the full potential of health predictions</p>
+                  <h2 className="text-xl sm:text-2xl font-bold text-white">Choose Your Plan</h2>
+                  <p className="text-white/60 mt-1 text-sm sm:text-base">Unlock the full potential of health predictions</p>
                 </div>
                 <button
                   onClick={onClose}
-                  className="p-2 hover:bg-white/10 rounded-2xl transition-colors"
+                  className="p-2 hover:bg-white/10 rounded-xl sm:rounded-2xl transition-colors"
                 >
-                  <X className="w-6 h-6 text-white/60" />
+                  <X className="w-5 h-5 sm:w-6 sm:h-6 text-white/60" />
                 </button>
               </div>
 
               {/* Content */}
-              <div className="p-6 overflow-y-auto max-h-[calc(90vh-120px)]">
+              <div className="p-4 sm:p-6 overflow-y-auto max-h-[calc(95vh-120px)] sm:max-h-[calc(90vh-120px)]">
                 {/* Plan Toggle */}
                 <div className="flex flex-wrap gap-2 mb-8 p-1 bg-white/5 rounded-2xl">
                   {Object.entries(plans).map(([key, plan]) => (
