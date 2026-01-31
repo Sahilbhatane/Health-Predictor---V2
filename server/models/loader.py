@@ -53,8 +53,13 @@ class ModelLoader:
             logger.info(f"Loading logistic model from: {logistic_path}")
             self.models['logistic'] = joblib.load(str(logistic_path))
             
-            logger.info(f"Loading neural model from: {neural_path}")
-            self.models['neural'] = joblib.load(str(neural_path))
+            # Try to load neural model, but don't fail if Keras is not available
+            try:
+                logger.info(f"Loading neural model from: {neural_path}")
+                self.models['neural'] = joblib.load(str(neural_path))
+            except Exception as e:
+                logger.warning(f"Could not load neural model (Keras may not be available): {e}")
+                self.models['neural'] = None
             
             logger.info(f"Loading encoder from: {encoder_path}")
             self.models['encoder'] = joblib.load(str(encoder_path))
