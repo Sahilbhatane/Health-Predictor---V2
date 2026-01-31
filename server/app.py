@@ -222,7 +222,7 @@ async def predict_common(data: CommonInput):
         encoder = model_loader.get_model('encoder')
         symptom_columns = model_loader.get_model('symptom_columns')
         
-        if not all([logistic_model, neural_model, encoder, symptom_columns]):
+        if not all([logistic_model, encoder, symptom_columns]):
             raise HTTPException(status_code=503, detail="Common disease models not available")
         
         # Use symptom vector with the encoder and models
@@ -232,18 +232,31 @@ async def predict_common(data: CommonInput):
         logistic_pred = logistic_model.predict(symptom_vector)[0]
         logistic_prob = logistic_model.predict_proba(symptom_vector).max()
         
-        neural_pred = neural_model.predict(symptom_vector)[0]
-        neural_prob = float(np.max(neural_pred))
-        
-        # Use the model with higher confidence
-        if logistic_prob > neural_prob:
+        # Use neural model if available, otherwise use logistic only
+        if neural_model is not None:
+            try:
+                neural_pred = neural_model.predict(symptom_vector)[0]
+                neural_prob = float(np.max(neural_pred))
+                
+                # Use the model with higher confidence
+                if logistic_prob > neural_prob:
+                    prediction = logistic_pred
+                    confidence = logistic_prob
+                    model_used = "logistic"
+                else:
+                    prediction = np.argmax(neural_pred)
+                    confidence = neural_prob
+                    model_used = "neural"
+            except Exception as e:
+                logger.warning(f"Neural model prediction failed: {e}, using logistic model")
+                prediction = logistic_pred
+                confidence = logistic_prob
+                model_used = "logistic"
+        else:
+            # Fall back to logistic model only
             prediction = logistic_pred
             confidence = logistic_prob
             model_used = "logistic"
-        else:
-            prediction = np.argmax(neural_pred)
-            confidence = neural_prob
-            model_used = "neural"
         
         # Decode the prediction using the encoder
         predicted_disease = encoder.inverse_transform([prediction])[0]
