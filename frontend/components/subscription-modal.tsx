@@ -30,7 +30,7 @@ export function SubscriptionModal({ isOpen, onClose, selectedPlan = 'monthly' }:
         "Export health reports"
       ],
       badge: "Most Flexible",
-      color: "blue",
+      color: "lime",
       buttonText: "Start Free Trial"
     },
     annual: {
@@ -158,7 +158,7 @@ export function SubscriptionModal({ isOpen, onClose, selectedPlan = 'monthly' }:
                   {/* Plan Info */}
                   <div>
                     <div className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium mb-4 ${
-                      activePlan === 'monthly' ? 'bg-blue-500/20 text-blue-300' :
+                      activePlan === 'monthly' ? 'bg-lime-500/20 text-lime-300' :
                       activePlan === 'annual' ? 'bg-emerald-500/20 text-emerald-300' :
                       'bg-amber-500/20 text-amber-300'
                     }`}>
@@ -227,13 +227,13 @@ export function SubscriptionModal({ isOpen, onClose, selectedPlan = 'monthly' }:
                       </div>
                     ) : (
                       <div className={`bg-gradient-to-r ${
-                        activePlan === 'monthly' 
-                          ? 'from-blue-500/10 to-purple-500/10 border-blue-400/20' 
+                        activePlan === 'monthly'
+                          ? 'from-lime-500/10 to-emerald-500/10 border-lime-400/20'
                           : 'from-emerald-500/10 to-teal-500/10 border-emerald-400/20'
                       } border rounded-3xl p-8`}>
                         <div className="text-center mb-6">
                           <CreditCard className={`w-16 h-16 mx-auto mb-4 ${
-                            activePlan === 'monthly' ? 'text-blue-400' : 'text-emerald-400'
+                            activePlan === 'monthly' ? 'text-lime-400' : 'text-emerald-400'
                           }`} />
                           <h4 className="text-2xl font-bold text-white mb-2">Ready to get started?</h4>
                           <p className="text-white/60">Join thousands of users improving their health</p>
@@ -243,7 +243,7 @@ export function SubscriptionModal({ isOpen, onClose, selectedPlan = 'monthly' }:
                           onClick={handleSubscribe}
                           className={`w-full font-medium py-4 text-lg ${
                             activePlan === 'monthly'
-                              ? 'bg-blue-500/20 hover:bg-blue-500/30 border border-blue-400/30 text-blue-300'
+                              ? 'bg-lime-500/20 hover:bg-lime-500/30 border border-lime-400/30 text-lime-300'
                               : 'bg-emerald-500/20 hover:bg-emerald-500/30 border border-emerald-400/30 text-emerald-300'
                           }`}
                         >
