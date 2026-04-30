@@ -21,8 +21,8 @@ const tabs = [
     id: "parkinsons",
     label: "Parkinson's Disease",
     icon: Brain,
-    color: "from-purple-500 to-indigo-500",
-    glowColor: "shadow-purple-500/25",
+    color: "from-teal-600 to-emerald-800",
+    glowColor: "shadow-teal-500/25",
     description: "Early neurological pattern detection through vocal biomarker analysis and motor assessments",
     features: ["Vocal Analysis", "Motor Symptoms", "Tremor Detection"],
     accuracy: "94%",
@@ -32,8 +32,8 @@ const tabs = [
     id: "diabetes",
     label: "Diabetes",
     icon: Droplet,
-    color: "from-blue-500 to-cyan-500",
-    glowColor: "shadow-blue-500/25",
+    color: "from-cyan-500 to-teal-500",
+    glowColor: "shadow-cyan-500/25",
     description: "Blood glucose prediction and metabolic risk evaluation with comprehensive health metrics",
     features: ["Glucose Levels", "BMI Analysis", "Family History"],
     accuracy: "92%",
@@ -65,13 +65,13 @@ export function PredictionTabs() {
         className="text-center mb-20"
       >
         <div className="inline-flex items-center justify-center mb-6">
-          <div className="flex items-center space-x-3 bg-gradient-to-r from-blue-500/10 to-violet-500/10 border border-blue-500/20 rounded-full px-6 py-3 backdrop-blur-sm">
-            <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-            <span className="text-sm font-medium text-blue-300">AI-Powered Medical Insights</span>
+          <div className="flex items-center space-x-3 bg-gradient-to-r from-emerald-500/10 to-lime-500/10 border border-emerald-500/20 rounded-full px-6 py-3 backdrop-blur-sm">
+            <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+            <span className="text-sm font-medium text-emerald-300">AI-Powered Medical Insights</span>
           </div>
         </div>
         
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-400 via-indigo-400 to-violet-400 bg-clip-text text-transparent mb-6 text-balance">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-emerald-400 via-teal-400 to-lime-300 bg-clip-text text-transparent mb-6 text-balance">
           Choose Your Health Assessment
         </h2>
         
@@ -87,13 +87,13 @@ export function PredictionTabs() {
             <span>Clinically Validated</span>
           </div>
           <div className="flex items-center space-x-2">
-            <svg className="w-4 h-4 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+            <svg className="w-4 h-4 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
               <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z" />
             </svg>
             <span>Patient & Professional Modes</span>
           </div>
           <div className="flex items-center space-x-2">
-            <svg className="w-4 h-4 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
+            <svg className="w-4 h-4 text-lime-400" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
             </svg>
             <span>Instant Results</span>
@@ -127,7 +127,7 @@ export function PredictionTabs() {
                 style={{
                   background: "linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(15, 15, 15, 0.8) 100%)",
                   backdropFilter: "blur(20px)",
-                  border: "1px solid rgba(99, 102, 241, 0.1)",
+                  border: "1px solid rgba(255, 255, 255, 0.08)",
                   boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
                 }}
               >
@@ -136,11 +136,11 @@ export function PredictionTabs() {
                   className={`absolute inset-0 bg-gradient-to-br ${tab.color} opacity-5 group-hover:opacity-15 transition-opacity duration-500`}
                 />
 
-                {/* Animated border */}
+                {/* Animated border - neutral wash that lets per-tab gradient show through */}
                 <div
                   className={`absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
                   style={{
-                    background: `linear-gradient(135deg, transparent 0%, rgba(99, 102, 241, 0.1) 50%, transparent 100%)`,
+                    background: `linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.08) 50%, transparent 100%)`,
                     padding: "1px",
                   }}
                 />
@@ -175,7 +175,7 @@ export function PredictionTabs() {
                   {/* Content section */}
                   <div className="flex-1 flex flex-col justify-between">
                     <div>
-                      <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:bg-clip-text group-hover:from-blue-400 group-hover:to-violet-400 transition-all duration-500">
+                      <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:bg-clip-text group-hover:from-emerald-400 group-hover:to-lime-300 transition-all duration-500">
                         {tab.label}
                       </h3>
                       <p className="text-slate-400 group-hover:text-slate-300 transition-colors duration-300 text-pretty leading-relaxed mb-6">
@@ -212,9 +212,9 @@ export function PredictionTabs() {
                         className={`w-3 h-3 rounded-full bg-gradient-to-r ${tab.color} shadow-lg`}
                         animate={{
                           scale: hoveredTab === tab.id ? [1, 1.3, 1] : 1,
-                          boxShadow: hoveredTab === tab.id 
-                            ? ["0 0 0 0 rgba(99, 102, 241, 0.4)", "0 0 0 10px rgba(99, 102, 241, 0)", "0 0 0 0 rgba(99, 102, 241, 0)"]
-                            : "0 0 0 0 rgba(99, 102, 241, 0)",
+                          boxShadow: hoveredTab === tab.id
+                            ? ["0 0 0 0 rgba(16, 185, 129, 0.4)", "0 0 0 10px rgba(16, 185, 129, 0)", "0 0 0 0 rgba(16, 185, 129, 0)"]
+                            : "0 0 0 0 rgba(16, 185, 129, 0)",
                         }}
                         transition={{
                           duration: hoveredTab === tab.id ? 1.5 : 0.3,
