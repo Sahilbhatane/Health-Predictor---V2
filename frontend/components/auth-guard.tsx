@@ -18,7 +18,7 @@ export function AuthGuard({ children, requiredForTabs = [] }: AuthGuardProps) {
   if (status === "loading") {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-500"></div>
       </div>
     )
   }
@@ -67,16 +67,16 @@ export function AuthGuard({ children, requiredForTabs = [] }: AuthGuardProps) {
                   </div>
                 </li>
                 <li className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-teal-400 rounded-full mt-2 flex-shrink-0"></div>
                   <div>
-                    <span className="font-medium text-blue-300">Medicine Suggestions</span>
+                    <span className="font-medium text-teal-300">Medicine Suggestions</span>
                     <p className="text-white/50 mt-1">Access curated pharmaceutical recommendations for your condition</p>
                   </div>
                 </li>
                 <li className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-lime-400 rounded-full mt-2 flex-shrink-0"></div>
                   <div>
-                    <span className="font-medium text-purple-300">Prediction History</span>
+                    <span className="font-medium text-lime-300">Prediction History</span>
                     <p className="text-white/50 mt-1">Track your health assessments over time</p>
                   </div>
                 </li>
