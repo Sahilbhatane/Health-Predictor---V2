@@ -79,12 +79,12 @@ export function FloatingNavbar() {
     {
       label: "Parkinson's",
       action: () => scrollToSection("prediction"),
-      color: "text-purple-400",
+      color: "text-teal-400",
     },
     {
       label: "Diabetes",
       action: () => scrollToSection("prediction"),
-      color: "text-blue-400",
+      color: "text-cyan-400",
     },
     {
       label: "Common Diseases",
@@ -99,7 +99,7 @@ export function FloatingNavbar() {
     {
       label: "Information",
       action: () => window.open("https://health-predictor-wiki.vercel.app/", "_blank"),
-      color: "text-indigo-400",
+      color: "text-emerald-400",
     },
   ]
 
@@ -126,10 +126,10 @@ export function FloatingNavbar() {
             style={{
               background: theme === "dark" ? "rgba(0, 0, 0, 0.7)" : "rgba(255, 255, 255, 0.7)",
               backdropFilter: "blur(25px)",
-              border: theme === "dark" ? "1px solid rgba(99, 102, 241, 0.3)" : "1px solid rgba(99, 102, 241, 0.2)",
-              boxShadow: theme === "dark" 
-                ? "0 0 30px rgba(99, 102, 241, 0.2), inset 0 0 30px rgba(99, 102, 241, 0.1)" 
-                : "0 0 30px rgba(99, 102, 241, 0.15), inset 0 0 30px rgba(99, 102, 241, 0.05)",
+              border: theme === "dark" ? "1px solid rgba(255, 255, 255, 0.14)" : "1px solid rgba(15, 23, 42, 0.12)",
+              boxShadow: theme === "dark"
+                ? "0 0 30px rgba(255, 255, 255, 0.08), inset 0 0 30px rgba(255, 255, 255, 0.05)"
+                : "0 0 30px rgba(15, 23, 42, 0.08), inset 0 0 30px rgba(15, 23, 42, 0.03)",
               width: "fit-content",
               maxWidth: "1000px",
             }}
@@ -189,17 +189,17 @@ export function FloatingNavbar() {
               className="absolute inset-0 rounded-full pointer-events-none"
               style={{
                 background: "transparent",
-                border: "1px solid rgba(99, 102, 241, 0.5)",
-                boxShadow: "0 0 20px rgba(99, 102, 241, 0.3), inset 0 0 20px rgba(99, 102, 241, 0.1)",
+                border: "1px solid rgba(255, 255, 255, 0.18)",
+                boxShadow: "0 0 20px rgba(255, 255, 255, 0.1), inset 0 0 20px rgba(255, 255, 255, 0.05)",
               }}
               animate={{
                 opacity: isHovering ? 1 : 0.6,
                 boxShadow: isHovering 
                   ? `0 0 40px rgba(255, 165, 0, 0.6), inset 0 0 40px rgba(255, 140, 0, 0.4), 0 0 60px rgba(255, 69, 0, 0.3)`
-                  : "0 0 20px rgba(99, 102, 241, 0.3), inset 0 0 20px rgba(99, 102, 241, 0.1)",
+                  : "0 0 20px rgba(255, 255, 255, 0.1), inset 0 0 20px rgba(255, 255, 255, 0.05)",
                 border: isHovering 
                   ? "1px solid rgba(255, 165, 0, 0.7)"
-                  : "1px solid rgba(99, 102, 241, 0.5)",
+                  : "1px solid rgba(255, 255, 255, 0.18)",
               }}
               transition={{ duration: 0.5 }}
             />
@@ -207,10 +207,10 @@ export function FloatingNavbar() {
             <div className="flex items-center justify-between w-full">
               {/* Logo */}
               <motion.div whileHover={{ scale: 1.05 }} className="flex items-center space-x-2">
-                <div className="w-6 h-6 md:w-8 md:h-8 bg-gradient-to-r from-blue-500 to-violet-500 rounded-full flex items-center justify-center">
+                <div className="w-6 h-6 md:w-8 md:h-8 bg-gradient-to-r from-emerald-500 to-lime-400 rounded-full flex items-center justify-center">
                   <Heart className="w-3 h-3 md:w-4 md:h-4 text-white" />
                 </div>
-                <span className={`font-bold text-sm md:text-lg bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent`}>
+                <span className={`font-bold text-sm md:text-lg bg-gradient-to-r from-emerald-400 to-lime-300 bg-clip-text text-transparent`}>
                   Health Predictor
                 </span>
               </motion.div>
@@ -315,7 +315,7 @@ export function FloatingNavbar() {
                   style={{
                     background: theme === "dark" ? "rgba(0, 0, 0, 0.7)" : "rgba(255, 255, 255, 0.7)",
                     backdropFilter: "blur(25px)",
-                    border: theme === "dark" ? "1px solid rgba(99, 102, 241, 0.3)" : "1px solid rgba(99, 102, 241, 0.2)",
+                    border: theme === "dark" ? "1px solid rgba(255, 255, 255, 0.14)" : "1px solid rgba(15, 23, 42, 0.12)",
                   }}
                 >
                   <div className="space-y-2">
