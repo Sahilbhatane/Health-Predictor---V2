@@ -96,12 +96,12 @@ export default function HomePage() {
               className="flex items-center justify-center mb-6"
             >
               <div className="relative">
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 via-indigo-500 to-violet-500 rounded-2xl flex items-center justify-center shadow-2xl shadow-blue-500/25">
+                <div className="w-16 h-16 bg-gradient-to-r from-emerald-500 via-teal-500 to-lime-400 rounded-2xl flex items-center justify-center shadow-2xl shadow-emerald-500/25">
                   <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <div className="absolute -inset-2 bg-gradient-to-r from-blue-500 via-indigo-500 to-violet-500 rounded-2xl opacity-20 blur-lg animate-pulse"></div>
+                <div className="absolute -inset-2 bg-gradient-to-r from-emerald-500 via-teal-500 to-lime-400 rounded-2xl opacity-20 blur-lg animate-pulse"></div>
               </div>
             </motion.div>
 
@@ -110,7 +110,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.4 }}
-              className="text-3xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-blue-400 via-indigo-400 to-violet-400 bg-clip-text text-transparent mb-4 neon-text"
+              className="text-3xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-emerald-400 via-teal-400 to-lime-300 bg-clip-text text-transparent mb-4 neon-text"
             >
               AI Health Predictor
             </motion.h1>
@@ -132,30 +132,30 @@ export default function HomePage() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.6, delay: 0.8 }}
-                  className="flex items-center space-x-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-2 backdrop-blur-sm"
+                  className="flex items-center space-x-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full px-4 py-2 backdrop-blur-sm"
                 >
-                  <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-                  <span className="text-sm text-blue-300 font-medium">97% Accuracy</span>
+                  <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                  <span className="text-sm text-emerald-300 font-medium">97% Accuracy</span>
                 </motion.div>
                 
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.6, delay: 0.9 }}
-                  className="flex items-center space-x-2 bg-indigo-500/10 border border-indigo-500/20 rounded-full px-4 py-2 backdrop-blur-sm"
+                  className="flex items-center space-x-2 bg-teal-500/10 border border-teal-500/20 rounded-full px-4 py-2 backdrop-blur-sm"
                 >
-                  <div className="w-2 h-2 bg-indigo-400 rounded-full animate-pulse"></div>
-                  <span className="text-sm text-indigo-300 font-medium">4 Conditions</span>
+                  <div className="w-2 h-2 bg-teal-400 rounded-full animate-pulse"></div>
+                  <span className="text-sm text-teal-300 font-medium">4 Conditions</span>
                 </motion.div>
                 
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.6, delay: 1.0 }}
-                  className="flex items-center space-x-2 bg-violet-500/10 border border-violet-500/20 rounded-full px-4 py-2 backdrop-blur-sm"
+                  className="flex items-center space-x-2 bg-lime-500/10 border border-lime-500/20 rounded-full px-4 py-2 backdrop-blur-sm"
                 >
-                  <div className="w-2 h-2 bg-violet-400 rounded-full animate-pulse"></div>
-                  <span className="text-sm text-violet-300 font-medium">Instant Results</span>
+                  <div className="w-2 h-2 bg-lime-400 rounded-full animate-pulse"></div>
+                  <span className="text-sm text-lime-300 font-medium">Instant Results</span>
                 </motion.div>
               </div>
             </motion.div>
@@ -175,11 +175,11 @@ export default function HomePage() {
                 onMouseEnter={() => setStartBtnHovering(true)}
                 onMouseLeave={() => setStartBtnHovering(false)}
                 onMouseMove={handleStartBtnMouseMove}
-                className="relative px-8 py-4 text-white font-semibold rounded-2xl shadow-2xl transition-all duration-300 overflow-hidden border border-slate-600 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500"
+                className="relative px-8 py-4 text-white font-semibold rounded-2xl shadow-2xl transition-all duration-300 overflow-hidden border border-emerald-700/40 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500"
                 style={{
-                  boxShadow: startBtnHovering 
-                    ? "0 0 25px rgba(59, 130, 246, 0.6), 0 0 50px rgba(99, 102, 241, 0.4), 0 0 75px rgba(139, 92, 246, 0.2)"
-                    : "0 0 15px rgba(59, 130, 246, 0.3), 0 0 30px rgba(99, 102, 241, 0.2)"
+                  boxShadow: startBtnHovering
+                    ? "0 0 25px rgba(16, 185, 129, 0.55), 0 0 50px rgba(132, 204, 22, 0.35), 0 0 75px rgba(20, 184, 166, 0.2)"
+                    : "0 0 15px rgba(16, 185, 129, 0.3), 0 0 30px rgba(132, 204, 22, 0.18)"
                 }}
               >
                 <motion.div
@@ -189,7 +189,7 @@ export default function HomePage() {
                     top: startBtnGlow.y - 40,
                     width: "80px",
                     height: "80px",
-                    background: "radial-gradient(circle, rgba(59, 130, 246, 0.8) 0%, rgba(99, 102, 241, 0.6) 30%, rgba(139, 92, 246, 0.4) 60%, transparent 80%)",
+                    background: "radial-gradient(circle, rgba(16, 185, 129, 0.85) 0%, rgba(132, 204, 22, 0.5) 30%, rgba(20, 184, 166, 0.3) 60%, transparent 80%)",
                     borderRadius: "50%",
                     filter: "blur(15px)",
                   }}
@@ -245,16 +245,16 @@ export default function HomePage() {
                   <span className="text-xs text-slate-400">HIPAA Compliant</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <div className="w-6 h-6 bg-blue-500/20 rounded-full flex items-center justify-center">
-                    <svg className="w-4 h-4 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="w-6 h-6 bg-cyan-500/20 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
                     </svg>
                   </div>
                   <span className="text-xs text-slate-400">Data Secure</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <div className="w-6 h-6 bg-purple-500/20 rounded-full flex items-center justify-center">
-                    <svg className="w-4 h-4 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="w-6 h-6 bg-lime-500/20 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-lime-400" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
@@ -292,10 +292,10 @@ export default function HomePage() {
                 transition={{ duration: 0.6 }}
                 className="flex items-center justify-center space-x-3 mb-4"
               >
-                <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-violet-500 rounded-full flex items-center justify-center">
+                <div className="w-8 h-8 bg-gradient-to-r from-emerald-500 to-lime-400 rounded-full flex items-center justify-center">
                   <div className="w-4 h-4 border border-white rounded-full border-t-transparent" />
                 </div>
-                <span className="text-lg font-bold bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">
+                <span className="text-lg font-bold bg-gradient-to-r from-emerald-400 to-lime-300 bg-clip-text text-transparent">
                   AI Health Predictor
                 </span>
               </motion.div>
@@ -336,22 +336,22 @@ export default function HomePage() {
                 <h4 className="text-white font-semibold mb-4 text-lg">Predictions</h4>
                 <ul className="space-y-3 text-sm text-slate-400">
                   <li>
-                    <a href="#prediction" className="hover:text-blue-400 transition-colors duration-200 flex items-center space-x-2">
+                    <a href="#prediction" className="hover:text-emerald-400 transition-colors duration-200 flex items-center space-x-2">
                       <span>Heart Disease Analysis</span>
                     </a>
                   </li>
                   <li>
-                    <a href="#prediction" className="hover:text-blue-400 transition-colors duration-200 flex items-center space-x-2">
+                    <a href="#prediction" className="hover:text-emerald-400 transition-colors duration-200 flex items-center space-x-2">
                       <span>Diabetes Prediction</span>
                     </a>
                   </li>
                   <li>
-                    <a href="#prediction" className="hover:text-blue-400 transition-colors duration-200 flex items-center space-x-2">
+                    <a href="#prediction" className="hover:text-emerald-400 transition-colors duration-200 flex items-center space-x-2">
                       <span>Parkinson's Assessment</span>
                     </a>
                   </li>
                   <li>
-                    <a href="#prediction" className="hover:text-blue-400 transition-colors duration-200 flex items-center space-x-2">
+                    <a href="#prediction" className="hover:text-emerald-400 transition-colors duration-200 flex items-center space-x-2">
                       <span>Common Diseases</span>
                     </a>
                   </li>
@@ -365,24 +365,24 @@ export default function HomePage() {
                     <a
                       href="https://health-predictor-wiki.vercel.app/"
                       target="_blank"
-                      className="hover:text-blue-400 transition-colors duration-200 flex items-center space-x-2"
+                      className="hover:text-emerald-400 transition-colors duration-200 flex items-center space-x-2"
                       rel="noreferrer"
                     >
                       <span>Documentation</span>
                     </a>
                   </li>
                   <li>
-                    <a href="#contact" className="hover:text-blue-400 transition-colors duration-200 flex items-center space-x-2">
+                    <a href="#contact" className="hover:text-emerald-400 transition-colors duration-200 flex items-center space-x-2">
                       <span>Contact Support</span>
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-blue-400 transition-colors duration-200 flex items-center space-x-2">
+                    <a href="#" className="hover:text-emerald-400 transition-colors duration-200 flex items-center space-x-2">
                       <span>Privacy Policy</span>
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-blue-400 transition-colors duration-200 flex items-center space-x-2">
+                    <a href="#" className="hover:text-emerald-400 transition-colors duration-200 flex items-center space-x-2">
                       <span>Terms of Service</span>
                     </a>
                   </li>
@@ -413,7 +413,7 @@ export default function HomePage() {
                     </p>
                   </div>
                   <div className="pt-2">
-                    <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                    <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                       AI-Powered Technology
                     </span>
                   </div>
