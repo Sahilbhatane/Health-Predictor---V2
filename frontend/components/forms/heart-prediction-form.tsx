@@ -323,7 +323,7 @@ export function HeartPredictionForm() {
               {/* Confidence Level */}
               <div className="bg-slate-800/50 rounded-xl p-6">
                 <div className="flex items-center mb-4">
-                  <Activity className="w-5 h-5 text-blue-400 mr-2" />
+                  <Activity className="w-5 h-5 text-rose-400 mr-2" />
                   <h4 className="font-semibold text-white">Confidence Level</h4>
                 </div>
                 <div className="w-full bg-slate-700 rounded-full h-3 mb-2">
@@ -344,7 +344,7 @@ export function HeartPredictionForm() {
               {/* Risk Score */}
               <div className="bg-slate-800/50 rounded-xl p-6">
                 <div className="flex items-center mb-4">
-                  <TrendingUp className="w-5 h-5 text-purple-400 mr-2" />
+                  <TrendingUp className="w-5 h-5 text-rose-400 mr-2" />
                   <h4 className="font-semibold text-white">Risk Score</h4>
                 </div>
                 <div className="w-full bg-slate-700 rounded-full h-3 mb-2">
@@ -352,7 +352,7 @@ export function HeartPredictionForm() {
                     initial={{ width: 0 }}
                     animate={{ width: `${result.riskScore}%` }}
                     transition={{ duration: 1, delay: 0.7 }}
-                    className="h-3 rounded-full bg-gradient-to-r from-purple-500 to-pink-400"
+                    className="h-3 rounded-full bg-gradient-to-r from-rose-500 to-red-500"
                   />
                 </div>
                 <p className="text-white font-semibold">{Math.round(result.riskScore)}%</p>
@@ -378,7 +378,7 @@ export function HeartPredictionForm() {
                       <h5 className="text-white font-medium mb-2">{subPred.condition}</h5>
                       <div className="w-full bg-slate-600 rounded-full h-2 mb-2">
                         <div
-                          className="h-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-400"
+                          className="h-2 rounded-full bg-gradient-to-r from-cyan-500 to-teal-400"
                           style={{ width: `${subPred.confidence}%` }}
                         />
                       </div>
@@ -416,10 +416,10 @@ export function HeartPredictionForm() {
               </div>
               
               {/* Medicine Suggestions Section - Only for authenticated users */}
-              <div className="bg-blue-500/10 border border-blue-500/30 rounded-xl p-6">
+              <div className="bg-slate-500/10 border border-slate-500/30 rounded-xl p-6">
                 <div className="flex items-center mb-4">
-                  <Stethoscope className="w-5 h-5 text-blue-400 mr-2" />
-                  <h4 className="font-semibold text-blue-300 text-lg">
+                  <Stethoscope className="w-5 h-5 text-slate-300 mr-2" />
+                  <h4 className="font-semibold text-slate-200 text-lg">
                     Medicine Suggestions
                   </h4>
                 </div>
@@ -428,15 +428,15 @@ export function HeartPredictionForm() {
                     <h5 className="font-medium text-white mb-2">Preventive Medications</h5>
                     <ul className="space-y-2 text-sm text-slate-300">
                       <li className="flex items-center">
-                        <div className="w-2 h-2 bg-blue-400 rounded-full mr-3" />
+                        <div className="w-2 h-2 bg-slate-400 rounded-full mr-3" />
                         Low-dose Aspirin (75-100mg daily) - Consult cardiologist
                       </li>
                       <li className="flex items-center">
-                        <div className="w-2 h-2 bg-blue-400 rounded-full mr-3" />
+                        <div className="w-2 h-2 bg-slate-400 rounded-full mr-3" />
                         ACE Inhibitors for blood pressure management
                       </li>
                       <li className="flex items-center">
-                        <div className="w-2 h-2 bg-blue-400 rounded-full mr-3" />
+                        <div className="w-2 h-2 bg-slate-400 rounded-full mr-3" />
                         Statins for cholesterol control (if indicated)
                       </li>
                     </ul>

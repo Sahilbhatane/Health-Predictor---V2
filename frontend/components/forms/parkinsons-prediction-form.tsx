@@ -362,13 +362,13 @@ export function ParkinsonsPredictionForm() {
       <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="py-8">
         <Tabs defaultValue="prediction" className="w-full">
           <TabsList className="grid w-full grid-cols-3 bg-slate-800/50">
-            <TabsTrigger value="prediction" className="data-[state=active]:bg-purple-500/20">
+            <TabsTrigger value="prediction" className="data-[state=active]:bg-teal-500/20">
               Prediction
             </TabsTrigger>
-            <TabsTrigger value="recommendations" className="data-[state=active]:bg-purple-500/20">
+            <TabsTrigger value="recommendations" className="data-[state=active]:bg-teal-500/20">
               Recommendations
             </TabsTrigger>
-            <TabsTrigger value="disclaimer" className="data-[state=active]:bg-purple-500/20">
+            <TabsTrigger value="disclaimer" className="data-[state=active]:bg-teal-500/20">
               Important Notice
             </TabsTrigger>
           </TabsList>
@@ -398,7 +398,7 @@ export function ParkinsonsPredictionForm() {
               {/* Confidence Level */}
               <div className="bg-slate-800/50 rounded-xl p-6">
                 <div className="flex items-center mb-4">
-                  <Activity className="w-5 h-5 text-purple-400 mr-2" />
+                  <Activity className="w-5 h-5 text-teal-400 mr-2" />
                   <h4 className="font-semibold text-white">Confidence Level</h4>
                 </div>
                 <div className="w-full bg-slate-700 rounded-full h-3 mb-2">
@@ -409,7 +409,7 @@ export function ParkinsonsPredictionForm() {
                     className={`h-3 rounded-full ${
                       result.risk === "low"
                         ? "bg-gradient-to-r from-green-500 to-emerald-400"
-                        : "bg-gradient-to-r from-purple-500 to-indigo-400"
+                        : "bg-gradient-to-r from-teal-500 to-emerald-500"
                     }`}
                   />
                 </div>
@@ -419,7 +419,7 @@ export function ParkinsonsPredictionForm() {
               {/* Risk Score */}
               <div className="bg-slate-800/50 rounded-xl p-6">
                 <div className="flex items-center mb-4">
-                  <TrendingUp className="w-5 h-5 text-pink-400 mr-2" />
+                  <TrendingUp className="w-5 h-5 text-emerald-400 mr-2" />
                   <h4 className="font-semibold text-white">Risk Score</h4>
                 </div>
                 <div className="w-full bg-slate-700 rounded-full h-3 mb-2">
@@ -427,7 +427,7 @@ export function ParkinsonsPredictionForm() {
                     initial={{ width: 0 }}
                     animate={{ width: `${result.riskScore}%` }}
                     transition={{ duration: 1, delay: 0.7 }}
-                    className="h-3 rounded-full bg-gradient-to-r from-pink-500 to-purple-400"
+                    className="h-3 rounded-full bg-gradient-to-r from-emerald-500 to-teal-400"
                   />
                 </div>
                 <p className="text-white font-semibold">{Math.round(result.riskScore)}%</p>
@@ -453,11 +453,11 @@ export function ParkinsonsPredictionForm() {
                       <h5 className="text-white font-medium mb-2">{subPred.condition}</h5>
                       <div className="w-full bg-slate-600 rounded-full h-2 mb-2">
                         <div
-                          className="h-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-400"
+                          className="h-2 rounded-full bg-gradient-to-r from-teal-500 to-emerald-400"
                           style={{ width: `${subPred.confidence}%` }}
                         />
                       </div>
-                      <p className="text-purple-400 text-sm font-semibold">{subPred.confidence}%</p>
+                      <p className="text-teal-400 text-sm font-semibold">{subPred.confidence}%</p>
                     </motion.div>
                   ))}
                 </div>
@@ -469,7 +469,7 @@ export function ParkinsonsPredictionForm() {
             <AuthGuard requiredForTabs={["recommendations"]}>
               <div className="bg-slate-800/30 rounded-xl p-6">
                 <h4 className="font-semibold text-white mb-4 flex items-center">
-                  <Brain className="w-5 h-5 text-purple-400 mr-2" />
+                  <Brain className="w-5 h-5 text-teal-400 mr-2" />
                   Neurological Care Recommendations
                 </h4>
                 <ul className="space-y-3">
@@ -481,7 +481,7 @@ export function ParkinsonsPredictionForm() {
                       transition={{ delay: index * 0.1 }}
                       className="flex items-start text-slate-300"
                     >
-                      <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 mr-3 flex-shrink-0" />
+                      <div className="w-2 h-2 bg-teal-400 rounded-full mt-2 mr-3 flex-shrink-0" />
                       <span className="text-sm leading-relaxed">{rec}</span>
                     </motion.li>
                   ))}
@@ -489,10 +489,10 @@ export function ParkinsonsPredictionForm() {
               </div>
               
               {/* Medicine Suggestions Section - Only for authenticated users */}
-              <div className="bg-purple-500/10 border border-purple-500/30 rounded-xl p-6">
+              <div className="bg-teal-500/10 border border-teal-500/30 rounded-xl p-6">
                 <div className="flex items-center mb-4">
-                  <Stethoscope className="w-5 h-5 text-purple-400 mr-2" />
-                  <h4 className="font-semibold text-purple-300 text-lg">
+                  <Stethoscope className="w-5 h-5 text-teal-400 mr-2" />
+                  <h4 className="font-semibold text-teal-300 text-lg">
                     Medicine & Treatment Suggestions
                   </h4>
                 </div>
@@ -501,19 +501,19 @@ export function ParkinsonsPredictionForm() {
                     <h5 className="font-medium text-white mb-2">Parkinson's Management</h5>
                     <ul className="space-y-2 text-sm text-slate-300">
                       <li className="flex items-center">
-                        <div className="w-2 h-2 bg-purple-400 rounded-full mr-3" />
+                        <div className="w-2 h-2 bg-teal-400 rounded-full mr-3" />
                         Levodopa/Carbidopa - Gold standard for motor symptoms
                       </li>
                       <li className="flex items-center">
-                        <div className="w-2 h-2 bg-purple-400 rounded-full mr-3" />
+                        <div className="w-2 h-2 bg-teal-400 rounded-full mr-3" />
                         Dopamine Agonists (Pramipexole, Ropinirole)
                       </li>
                       <li className="flex items-center">
-                        <div className="w-2 h-2 bg-purple-400 rounded-full mr-3" />
+                        <div className="w-2 h-2 bg-teal-400 rounded-full mr-3" />
                         MAO-B Inhibitors (Selegiline, Rasagiline)
                       </li>
                       <li className="flex items-center">
-                        <div className="w-2 h-2 bg-purple-400 rounded-full mr-3" />
+                        <div className="w-2 h-2 bg-teal-400 rounded-full mr-3" />
                         Coenzyme Q10 (300-1200mg) - Neuroprotective support
                       </li>
                     </ul>
@@ -593,7 +593,7 @@ export function ParkinsonsPredictionForm() {
                 ppe: "",
               })
             }}
-            className="px-8 py-3 bg-gradient-to-r from-purple-500 to-indigo-500 text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-200"
+            className="px-8 py-3 bg-gradient-to-r from-teal-500 to-emerald-600 text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-200"
           >
             Take Another Test
           </motion.button>
@@ -612,7 +612,7 @@ export function ParkinsonsPredictionForm() {
             onClick={() => setMode("patient")}
             className={`px-6 py-3 rounded-lg font-semibold transition-all duration-200 flex items-center space-x-2 ${
               mode === "patient" 
-                ? "bg-purple-500/20 text-purple-400 shadow-lg" 
+                ? "bg-teal-500/20 text-teal-300 shadow-lg" 
                 : "text-slate-400 hover:text-white"
             }`}
           >
@@ -624,7 +624,7 @@ export function ParkinsonsPredictionForm() {
             onClick={() => setMode("doctor")}
             className={`px-6 py-3 rounded-lg font-semibold transition-all duration-200 flex items-center space-x-2 ${
               mode === "doctor" 
-                ? "bg-purple-500/20 text-purple-400 shadow-lg" 
+                ? "bg-teal-500/20 text-teal-300 shadow-lg" 
                 : "text-slate-400 hover:text-white"
             }`}
           >
@@ -664,7 +664,7 @@ export function ParkinsonsPredictionForm() {
                     whileTap={{ scale: 0.98 }}
                     className={`flex items-center p-4 rounded-xl cursor-pointer transition-all duration-200 ${
                       patientFormData[q.key] === option.value
-                        ? "bg-purple-500/20 border-purple-500/50 text-white"
+                        ? "bg-teal-500/20 border-teal-500/50 text-white"
                         : "bg-slate-800/50 border-slate-700 text-slate-300 hover:bg-slate-700/50"
                     } border`}
                   >
@@ -678,7 +678,7 @@ export function ParkinsonsPredictionForm() {
                     />
                     <div
                       className={`w-4 h-4 rounded-full border-2 mr-3 flex items-center justify-center ${
-                        patientFormData[q.key] === option.value ? "border-purple-500 bg-purple-500" : "border-slate-500"
+                        patientFormData[q.key] === option.value ? "border-teal-500 bg-teal-500" : "border-slate-500"
                       }`}
                     >
                       {patientFormData[q.key] === option.value && <div className="w-2 h-2 bg-white rounded-full" />}
@@ -695,7 +695,7 @@ export function ParkinsonsPredictionForm() {
             disabled={isLoading || Object.values(patientFormData).some((value) => !value)}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="w-full py-4 bg-gradient-to-r from-purple-500 to-indigo-500 text-white font-semibold rounded-xl disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg transition-all duration-200 flex items-center justify-center space-x-2"
+            className="w-full py-4 bg-gradient-to-r from-teal-500 to-emerald-600 text-white font-semibold rounded-xl disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg transition-all duration-200 flex items-center justify-center space-x-2"
           >
             {isLoading ? (
               <>
@@ -731,7 +731,7 @@ export function ParkinsonsPredictionForm() {
                   step={q.step}
                   value={doctorFormData[q.key]}
                   onChange={(e) => setDoctorFormData({ ...doctorFormData, [q.key]: e.target.value })}
-                  className="w-full p-4 bg-slate-800/50 border border-slate-700 rounded-xl text-white placeholder-slate-400 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20 transition-all duration-200"
+                  className="w-full p-4 bg-slate-800/50 border border-slate-700 rounded-xl text-white placeholder-slate-400 focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/20 transition-all duration-200"
                   required
                 />
               </div>
@@ -743,7 +743,7 @@ export function ParkinsonsPredictionForm() {
             disabled={isLoading || Object.values(doctorFormData).some((value) => !value)}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="w-full py-4 bg-gradient-to-r from-purple-500 to-indigo-500 text-white font-semibold rounded-xl disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg transition-all duration-200 flex items-center justify-center space-x-2"
+            className="w-full py-4 bg-gradient-to-r from-teal-500 to-emerald-600 text-white font-semibold rounded-xl disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg transition-all duration-200 flex items-center justify-center space-x-2"
           >
             {isLoading ? (
               <>

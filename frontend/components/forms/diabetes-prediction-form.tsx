@@ -264,13 +264,13 @@ export function DiabetesPredictionForm() {
       <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="py-8">
         <Tabs defaultValue="prediction" className="w-full">
           <TabsList className="grid w-full grid-cols-3 bg-slate-800/50">
-            <TabsTrigger value="prediction" className="data-[state=active]:bg-blue-500/20">
+            <TabsTrigger value="prediction" className="data-[state=active]:bg-cyan-500/20">
               Prediction
             </TabsTrigger>
-            <TabsTrigger value="recommendations" className="data-[state=active]:bg-blue-500/20">
+            <TabsTrigger value="recommendations" className="data-[state=active]:bg-cyan-500/20">
               Recommendations
             </TabsTrigger>
-            <TabsTrigger value="disclaimer" className="data-[state=active]:bg-blue-500/20">
+            <TabsTrigger value="disclaimer" className="data-[state=active]:bg-cyan-500/20">
               Important Notice
             </TabsTrigger>
           </TabsList>
@@ -300,7 +300,7 @@ export function DiabetesPredictionForm() {
               {/* Confidence Level */}
               <div className="bg-slate-800/50 rounded-xl p-6">
                 <div className="flex items-center mb-4">
-                  <Activity className="w-5 h-5 text-blue-400 mr-2" />
+                  <Activity className="w-5 h-5 text-cyan-400 mr-2" />
                   <h4 className="font-semibold text-white">Confidence Level</h4>
                 </div>
                 <div className="w-full bg-slate-700 rounded-full h-3 mb-2">
@@ -311,7 +311,7 @@ export function DiabetesPredictionForm() {
                     className={`h-3 rounded-full ${
                       result.risk === "low"
                         ? "bg-gradient-to-r from-green-500 to-emerald-400"
-                        : "bg-gradient-to-r from-blue-500 to-cyan-400"
+                        : "bg-gradient-to-r from-cyan-500 to-teal-400"
                     }`}
                   />
                 </div>
@@ -321,7 +321,7 @@ export function DiabetesPredictionForm() {
               {/* Risk Score */}
               <div className="bg-slate-800/50 rounded-xl p-6">
                 <div className="flex items-center mb-4">
-                  <TrendingUp className="w-5 h-5 text-purple-400 mr-2" />
+                  <TrendingUp className="w-5 h-5 text-teal-400 mr-2" />
                   <h4 className="font-semibold text-white">Risk Score</h4>
                 </div>
                 <div className="w-full bg-slate-700 rounded-full h-3 mb-2">
@@ -329,7 +329,7 @@ export function DiabetesPredictionForm() {
                     initial={{ width: 0 }}
                     animate={{ width: `${result.riskScore}%` }}
                     transition={{ duration: 1, delay: 0.7 }}
-                    className="h-3 rounded-full bg-gradient-to-r from-purple-500 to-pink-400"
+                    className="h-3 rounded-full bg-gradient-to-r from-cyan-500 to-teal-400"
                   />
                 </div>
                 <p className="text-white font-semibold">{Math.round(result.riskScore)}%</p>
@@ -355,7 +355,7 @@ export function DiabetesPredictionForm() {
                       <h5 className="text-white font-medium mb-2">{subPred.condition}</h5>
                       <div className="w-full bg-slate-600 rounded-full h-2 mb-2">
                         <div
-                          className="h-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-400"
+                          className="h-2 rounded-full bg-gradient-to-r from-cyan-500 to-teal-400"
                           style={{ width: `${subPred.confidence}%` }}
                         />
                       </div>
@@ -371,7 +371,7 @@ export function DiabetesPredictionForm() {
             <AuthGuard requiredForTabs={["recommendations"]}>
               <div className="bg-slate-800/30 rounded-xl p-6">
                 <h4 className="font-semibold text-white mb-4 flex items-center">
-                  <Droplet className="w-5 h-5 text-blue-400 mr-2" />
+                  <Droplet className="w-5 h-5 text-cyan-400 mr-2" />
                   Diabetes Prevention Recommendations
                 </h4>
                 <ul className="space-y-3">
@@ -383,7 +383,7 @@ export function DiabetesPredictionForm() {
                       transition={{ delay: index * 0.1 }}
                       className="flex items-start text-slate-300"
                     >
-                      <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 mr-3 flex-shrink-0" />
+                      <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 mr-3 flex-shrink-0" />
                       <span className="text-sm leading-relaxed">{rec}</span>
                     </motion.li>
                   ))}
@@ -481,7 +481,7 @@ export function DiabetesPredictionForm() {
                 age: "",
               })
             }}
-            className="px-8 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-200"
+            className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-200"
           >
             Take Another Test
           </motion.button>
@@ -500,7 +500,7 @@ export function DiabetesPredictionForm() {
             onClick={() => setMode("patient")}
             className={`px-6 py-3 rounded-lg font-semibold transition-all duration-200 flex items-center space-x-2 ${
               mode === "patient" 
-                ? "bg-blue-500/20 text-blue-400 shadow-lg" 
+                ? "bg-cyan-500/20 text-cyan-300 shadow-lg" 
                 : "text-slate-400 hover:text-white"
             }`}
           >
@@ -512,7 +512,7 @@ export function DiabetesPredictionForm() {
             onClick={() => setMode("doctor")}
             className={`px-6 py-3 rounded-lg font-semibold transition-all duration-200 flex items-center space-x-2 ${
               mode === "doctor" 
-                ? "bg-blue-500/20 text-blue-400 shadow-lg" 
+                ? "bg-cyan-500/20 text-cyan-300 shadow-lg" 
                 : "text-slate-400 hover:text-white"
             }`}
           >
@@ -552,7 +552,7 @@ export function DiabetesPredictionForm() {
                     whileTap={{ scale: 0.98 }}
                     className={`flex items-center p-4 rounded-xl cursor-pointer transition-all duration-200 ${
                       patientFormData[q.key] === option.value
-                        ? "bg-blue-500/20 border-blue-500/50 text-white"
+                        ? "bg-cyan-500/20 border-cyan-500/50 text-white"
                         : "bg-slate-800/50 border-slate-700 text-slate-300 hover:bg-slate-700/50"
                     } border`}
                   >
@@ -566,7 +566,7 @@ export function DiabetesPredictionForm() {
                     />
                     <div
                       className={`w-4 h-4 rounded-full border-2 mr-3 flex items-center justify-center ${
-                        patientFormData[q.key] === option.value ? "border-blue-500 bg-blue-500" : "border-slate-500"
+                        patientFormData[q.key] === option.value ? "border-cyan-500 bg-cyan-500" : "border-slate-500"
                       }`}
                     >
                       {patientFormData[q.key] === option.value && <div className="w-2 h-2 bg-white rounded-full" />}
@@ -583,7 +583,7 @@ export function DiabetesPredictionForm() {
             disabled={isLoading || Object.values(patientFormData).some((value) => !value)}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="w-full py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-xl disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg transition-all duration-200 flex items-center justify-center space-x-2"
+            className="w-full py-4 bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-semibold rounded-xl disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg transition-all duration-200 flex items-center justify-center space-x-2"
           >
             {isLoading ? (
               <>
@@ -619,7 +619,7 @@ export function DiabetesPredictionForm() {
                   step={q.step}
                   value={doctorFormData[q.key]}
                   onChange={(e) => setDoctorFormData({ ...doctorFormData, [q.key]: e.target.value })}
-                  className="w-full p-4 bg-slate-800/50 border border-slate-700 rounded-xl text-white placeholder-slate-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all duration-200"
+                  className="w-full p-4 bg-slate-800/50 border border-slate-700 rounded-xl text-white placeholder-slate-400 focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/20 transition-all duration-200"
                   required
                 />
               </div>
@@ -631,7 +631,7 @@ export function DiabetesPredictionForm() {
             disabled={isLoading || Object.values(doctorFormData).some((value) => !value)}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="w-full py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-xl disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg transition-all duration-200 flex items-center justify-center space-x-2"
+            className="w-full py-4 bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-semibold rounded-xl disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg transition-all duration-200 flex items-center justify-center space-x-2"
           >
             {isLoading ? (
               <>
