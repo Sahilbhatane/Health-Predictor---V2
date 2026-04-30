@@ -6,7 +6,8 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "verify:theme": "node scripts/verify-theme-palette.mjs"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
