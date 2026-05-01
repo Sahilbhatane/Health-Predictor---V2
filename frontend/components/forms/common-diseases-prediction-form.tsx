@@ -193,7 +193,7 @@ export function ImprovedCommonDiseasesPredictionForm() {
       switch (risk) {
         case "low": return "from-green-500 to-emerald-400"
         case "medium": return "from-yellow-500 to-orange-400"
-        case "high": return "from-red-500 to-pink-400"
+        case "high": return "from-red-500 to-rose-400"
         default: return "from-slate-500 to-slate-400"
       }
     }
@@ -256,7 +256,7 @@ export function ImprovedCommonDiseasesPredictionForm() {
               {/* Risk Score */}
               <div className="bg-slate-800/50 rounded-xl p-6">
                 <div className="flex items-center mb-4">
-                  <TrendingUp className="w-5 h-5 text-purple-400 mr-2" />
+                  <TrendingUp className="w-5 h-5 text-emerald-400 mr-2" />
                   <h4 className="font-semibold text-white">Severity Score</h4>
                 </div>
                 <div className="w-full bg-slate-700 rounded-full h-3 mb-2">
@@ -264,7 +264,7 @@ export function ImprovedCommonDiseasesPredictionForm() {
                     initial={{ width: 0 }}
                     animate={{ width: `${result.riskScore}%` }}
                     transition={{ duration: 1, delay: 0.7 }}
-                    className="h-3 rounded-full bg-gradient-to-r from-purple-500 to-pink-400"
+                    className="h-3 rounded-full bg-gradient-to-r from-emerald-500 to-lime-400"
                   />
                 </div>
                 <p className="text-white font-semibold">{Math.round(result.riskScore)}%</p>
@@ -290,7 +290,7 @@ export function ImprovedCommonDiseasesPredictionForm() {
                       <h5 className="text-white font-medium mb-2">{subPred.condition}</h5>
                       <div className="w-full bg-slate-600 rounded-full h-2 mb-2">
                         <div
-                          className="h-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-400"
+                          className="h-2 rounded-full bg-gradient-to-r from-cyan-500 to-teal-400"
                           style={{ width: `${subPred.confidence}%` }}
                         />
                       </div>
@@ -323,8 +323,8 @@ export function ImprovedCommonDiseasesPredictionForm() {
                     </motion.li>
                   ))}
                 </ul>
-                <div className="mt-6 p-4 bg-blue-500/10 border border-blue-500/30 rounded-lg">
-                  <p className="text-blue-400 text-sm">
+                <div className="mt-6 p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-lg">
+                  <p className="text-emerald-300 text-sm">
                     <strong>Note:</strong> {result.risk === "high"
                       ? "Please consult with a healthcare professional as soon as possible."
                       : result.risk === "medium"
@@ -340,7 +340,7 @@ export function ImprovedCommonDiseasesPredictionForm() {
             <AuthGuard requiredForTabs={["medicine"]}>
               <div className="bg-slate-800/30 rounded-xl p-6">
                 <h4 className="font-semibold text-white mb-4 flex items-center">
-                  <Pill className="w-5 h-5 text-blue-400 mr-2" />
+                  <Pill className="w-5 h-5 text-emerald-400 mr-2" />
                   Medicine Suggestions and Recommendations
                 </h4>
                 <div className="bg-orange-500/10 border border-orange-500/30 rounded-xl p-6">
@@ -359,8 +359,8 @@ export function ImprovedCommonDiseasesPredictionForm() {
                       <li>Over-the-counter alternatives and natural remedies</li>
                       <li>Emergency medication protocols when applicable</li>
                     </ul>
-                    <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4 mt-4">
-                      <p className="text-blue-400 text-sm font-semibold">
+                    <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-lg p-4 mt-4">
+                      <p className="text-emerald-300 text-sm font-semibold">
                         📋 This feature will be implemented in future updates to provide comprehensive pharmaceutical guidance.
                       </p>
                     </div>

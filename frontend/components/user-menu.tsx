@@ -197,7 +197,7 @@ export function UserMenu() {
                               {/* Monthly Plan */}
                               <button 
                                 onClick={() => openSubscriptionModal('monthly')}
-                                className="w-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-400/20 rounded-xl p-2.5 sm:p-3 text-left hover:from-blue-500/30 hover:to-purple-500/30 transition-all duration-200"
+                                className="w-full bg-gradient-to-r from-emerald-500/20 to-lime-500/20 border border-emerald-400/20 rounded-xl p-2.5 sm:p-3 text-left hover:from-emerald-500/30 hover:to-lime-500/30 transition-all duration-200"
                               >
                                 <div className="flex justify-between items-center">
                                   <div>
@@ -205,7 +205,7 @@ export function UserMenu() {
                                     <div className="text-xs text-white/60">7-day free trial</div>
                                   </div>
                                   <div className="text-right">
-                                    <div className="text-xs sm:text-sm font-bold text-blue-300">₹50</div>
+                                    <div className="text-xs sm:text-sm font-bold text-lime-300">₹50</div>
                                     <div className="text-xs text-white/60">first month</div>
                                   </div>
                                 </div>

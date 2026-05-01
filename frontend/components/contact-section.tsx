@@ -81,7 +81,7 @@ export function ContactSection() {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="text-center mb-8"
       >
-        <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-400 via-indigo-400 to-violet-400 bg-clip-text text-transparent mb-3 text-balance">
+        <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-emerald-400 via-teal-400 to-lime-300 bg-clip-text text-transparent mb-3 text-balance">
           Get In Touch
         </h2>
         <p className="text-base text-slate-400 max-w-xl mx-auto text-pretty">
@@ -101,7 +101,7 @@ export function ContactSection() {
           style={{
             background: "rgba(0, 0, 0, 0.4)",
             backdropFilter: "blur(20px)",
-            border: "1px solid rgba(99, 102, 241, 0.2)",
+            border: "1px solid rgba(16, 185, 129, 0.2)",
           }}
         >
           {/* Collapsible Header */}
@@ -112,7 +112,7 @@ export function ContactSection() {
             className="w-full p-6 md:p-8 flex items-center justify-between text-left focus:outline-none"
           >
             <div className="flex items-center space-x-3">
-              <div className="p-3 rounded-2xl bg-gradient-to-r from-blue-500 to-violet-500 shadow-lg">
+              <div className="p-3 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-500 shadow-lg">
                 <Mail className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -157,7 +157,7 @@ export function ContactSection() {
                           id="name"
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                          className="w-full pl-10 pr-4 py-3 bg-slate-800/50 border border-slate-700 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all duration-200"
+                          className="w-full pl-10 pr-4 py-3 bg-slate-800/50 border border-slate-700 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500/50 transition-all duration-200"
                           placeholder="Enter your full name"
                           required
                         />
@@ -180,7 +180,7 @@ export function ContactSection() {
                           id="email"
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          className="w-full pl-10 pr-4 py-3 bg-slate-800/50 border border-slate-700 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all duration-200"
+                          className="w-full pl-10 pr-4 py-3 bg-slate-800/50 border border-slate-700 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500/50 transition-all duration-200"
                           placeholder="Enter your email address"
                           required
                         />
@@ -203,7 +203,7 @@ export function ContactSection() {
                           rows={4}
                           value={formData.message}
                           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                          className="w-full pl-10 pr-4 py-3 bg-slate-800/50 border border-slate-700 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all duration-200 resize-none"
+                          className="w-full pl-10 pr-4 py-3 bg-slate-800/50 border border-slate-700 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500/50 transition-all duration-200 resize-none"
                           placeholder="Tell us how we can help you..."
                           required
                         />
@@ -218,7 +218,7 @@ export function ContactSection() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: 0.4 }}
-                      className="w-full py-3 bg-gradient-to-r from-blue-500 to-violet-500 text-white font-semibold rounded-xl disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg transition-all duration-200 flex items-center justify-center space-x-2"
+                      className="w-full py-3 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold rounded-xl disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg transition-all duration-200 flex items-center justify-center space-x-2"
                     >
                       {isSubmitting ? (
                         <>
@@ -239,8 +239,8 @@ export function ContactSection() {
           </AnimatePresence>
         </div>
 
-        <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-r from-blue-500/20 to-violet-500/20 rounded-full blur-xl" />
-        <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 rounded-full blur-xl" />
+        <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-r from-emerald-500/20 to-lime-500/20 rounded-full blur-xl" />
+        <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-gradient-to-r from-teal-500/20 to-emerald-500/20 rounded-full blur-xl" />
       </motion.div>
     </div>
   )

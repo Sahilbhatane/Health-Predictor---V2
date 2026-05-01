@@ -15,9 +15,9 @@ export default function DiabetesPredictionPage() {
       <div className="min-h-screen bg-black relative overflow-hidden">
         {/* Background elements */}
         <div className="fixed inset-0 opacity-20 pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/30 rounded-full blur-3xl" />
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-teal-600/30 rounded-full blur-3xl" />
           <div className="absolute top-3/4 right-1/4 w-80 h-80 bg-cyan-600/30 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 left-1/2 w-72 h-72 bg-sky-600/30 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 left-1/2 w-72 h-72 bg-emerald-700/30 rounded-full blur-3xl" />
         </div>
 
         {/* Header */}
@@ -40,10 +40,10 @@ export default function DiabetesPredictionPage() {
             </Link>
 
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-violet-500 rounded-full flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-r from-emerald-500 to-lime-400 rounded-full flex items-center justify-center">
                 <Droplet className="w-5 h-5 text-white" />
               </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">
+              <span className="text-xl font-bold bg-gradient-to-r from-emerald-400 to-lime-300 bg-clip-text text-transparent">
                 Health Predictor
               </span>
             </div>
@@ -64,7 +64,7 @@ export default function DiabetesPredictionPage() {
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="inline-flex items-center justify-center p-6 rounded-3xl bg-gradient-to-r from-blue-500 to-cyan-500 shadow-2xl mb-8"
+                className="inline-flex items-center justify-center p-6 rounded-3xl bg-gradient-to-r from-cyan-500 to-teal-500 shadow-2xl mb-8"
               >
                 <Droplet className="w-16 h-16 text-white" />
               </motion.div>
@@ -72,7 +72,7 @@ export default function DiabetesPredictionPage() {
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-400 bg-clip-text text-transparent mb-6 text-balance leading-tight"
+                className="text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent mb-6 text-balance leading-tight"
               >
                 Diabetes Prediction
               </motion.h1>
@@ -92,11 +92,11 @@ export default function DiabetesPredictionPage() {
               initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="glass-enhanced rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl border border-blue-500/20"
+              className="glass-enhanced rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl border border-cyan-500/20"
               style={{
                 background: "linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(15, 15, 15, 0.8) 100%)",
                 backdropFilter: "blur(20px)",
-                boxShadow: "0 25px 50px -12px rgba(59, 130, 246, 0.25), 0 0 0 1px rgba(59, 130, 246, 0.1)",
+                boxShadow: "0 25px 50px -12px rgba(6, 182, 212, 0.25), 0 0 0 1px rgba(6, 182, 212, 0.1)",
               }}
             >
               <DiabetesPredictionForm />
