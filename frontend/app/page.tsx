@@ -377,12 +377,12 @@ export default function HomePage() {
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-emerald-400 transition-colors duration-200 flex items-center space-x-2">
+                    <a href="/privacy" className="hover:text-emerald-400 transition-colors duration-200 flex items-center space-x-2">
                       <span>Privacy Policy</span>
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-emerald-400 transition-colors duration-200 flex items-center space-x-2">
+                    <a href="/terms" className="hover:text-emerald-400 transition-colors duration-200 flex items-center space-x-2">
                       <span>Terms of Service</span>
                     </a>
                   </li>
